@@ -9,3 +9,22 @@
       margin: 0 auto;
     }
   
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const paddleWidth = 80;
+    const paddleHeight = 10;
+    const paddleSpeed = 5;
+    const fruitRadius = 15;
+    const fruitSpeed = 3;
+
+    let paddleX = (canvas.width - paddleWidth) / 2;
+    let fruits = [];
+
+    function drawPaddle() {
+      ctx.beginPath();
+      ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+      ctx.fillStyle = 'blue';
+      ctx.fill();
+      ctx.closePath();
+    }
