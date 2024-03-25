@@ -28,3 +28,27 @@
       ctx.fill();
       ctx.closePath();
     }
+      function drawFruit() {
+      fruits.forEach((fruit) => {
+        ctx.beginPath();
+        ctx.arc(fruit.x, fruit.y, fruitRadius, 0, Math.PI * 2);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.closePath();
+      });
+    }
+
+    function movePaddle(e) {
+      if (e.key === 'ArrowLeft' && paddleX > 0) {
+        paddleX -= paddleSpeed;
+      } else if (e.key === 'ArrowRight' && paddleX < canvas.width - paddleWidth) {
+        paddleX += paddleSpeed;
+      }
+    }
+
+    function createFruit() {
+      const fruitX = Math.random() * (canvas.width - 2 * fruitRadius) + fruitRadius;
+      const fruitY = 0;
+      fruits.push({ x: fruitX, y: fruitY });
+    }
+
