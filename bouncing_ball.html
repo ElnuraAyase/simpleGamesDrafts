@@ -51,4 +51,26 @@
       const fruitY = 0;
       fruits.push({ x: fruitX, y: fruitY });
     }
+   function update() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawPaddle();
+      drawFruit();
+      fruits.forEach((fruit, index) => {
+        fruit.y += fruitSpeed;
+        if (fruit.y > canvas.height - paddleHeight - fruitRadius &&
+            fruit.x > paddleX && fruit.x < paddleX + paddleWidth) {
+          fruits.splice(index, 1);
+        }
+      });
+    }
 
+    setInterval(() => {
+      createFruit();
+    }, 1000);
+
+    document.addEventListener('keydown', movePaddle);
+
+    setInterval(update, 10);
+  </script>
+</body>
+</html>
