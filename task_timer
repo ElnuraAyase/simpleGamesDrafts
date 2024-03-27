@@ -15,3 +15,14 @@ def main():
         print("1. Add Task")
         print("2. Display Schedule")
         print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            task_name = input("Enter task name: ")
+            duration = int(input("Enter task duration in minutes: "))
+            add_task(tasks, task_name, duration)
+        elif choice == "2":
+            display_schedule(tasks)
+        elif choice == "3":
+            print("Exiting...")
+            break
