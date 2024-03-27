@@ -8,3 +8,10 @@ def display_schedule(tasks):
         print(f"At {current_time}: {task_name} ({duration} mins)")
         current_time += duration
     print("End of Schedule")
+def main():
+    tasks = []
+    while True:
+        print("\nMenu:")
+        print("1. Add Task")
+        print("2. Display Schedule")
+        print("3. Exit")
