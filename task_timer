@@ -1,1 +1,10 @@
+def add_task(tasks, task_name, duration):
+    tasks.append((task_name, duration))
 
+def display_schedule(tasks):
+    current_time = 0
+    print("Schedule:")
+    for task_name, duration in tasks:
+        print(f"At {current_time}: {task_name} ({duration} mins)")
+        current_time += duration
+    print("End of Schedule")
