@@ -52,3 +52,13 @@ def pop_balloon(balloon):
     balloon.hideturtle()
     balloon.goto(0, -200)
     balloon.clear()
+# Main game loop
+while True:
+    for balloon in balloons:
+        y = balloon.ycor()
+        y -= 2
+        balloon.sety(y)
+
+        # Check if balloon is popped
+        if balloon.distance(player) < 40:
+            pop_balloon(balloon)
