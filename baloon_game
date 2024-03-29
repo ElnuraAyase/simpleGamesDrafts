@@ -1,1 +1,35 @@
 
+import turtle
+import random
+
+# Set up the screen
+screen = turtle.Screen()
+screen.title("Balloon Pop Game")
+screen.setup(width=600, height=600)
+screen.bgcolor("skyblue")
+
+# Create the player (arrow shape)
+player = turtle.Turtle()
+player.shape("arrow")
+player.color("red")
+player.penup()
+player.speed(0)
+
+# Create function to move player left
+def move_left():
+    x = player.xcor()
+    x -= 20
+    player.setx(x)
+
+# Create function to move player right
+def move_right():
+    x = player.xcor()
+    x += 20
+    player.setx(x)
+
+# Create keyboard bindings
+screen.listen()
+screen.onkeypress(move_left, "Left")
+screen.onkeypress(move_right, "Right")
+
+
