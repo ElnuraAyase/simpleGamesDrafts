@@ -62,3 +62,10 @@ while True:
         # Check if balloon is popped
         if balloon.distance(player) < 40:
             pop_balloon(balloon)
+        # Check if balloon goes out of bounds
+        if y < -300:
+            x = random.randint(-280, 280)
+            y = random.randint(100, 250)
+            balloon.goto(x, y)
+
+screen.mainloop()
