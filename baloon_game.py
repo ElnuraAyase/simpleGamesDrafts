@@ -11,7 +11,7 @@ screen.bgcolor("skyblue")
 # Create the player (arrow shape)
 player = turtle.Turtle()
 player.shape("arrow")
-player.color("red")
+player.color("blue")
 player.penup()
 player.speed(0)
 
